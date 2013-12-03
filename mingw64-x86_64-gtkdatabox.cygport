@@ -1,0 +1,21 @@
+CROSS_HOST="x86_64-w64-mingw32"
+inherit cross gnome2
+
+NAME="mingw64-x86_64-gtkdatabox"
+VERSION=0.9.2.0
+RELEASE=2
+CATEGORY="Libs"
+SUMMARY="GTK+ widget for displaying fluctuating numerical data"
+DESCRIPTION="GtkDatabox is a widget for live display of large amounts of
+fluctuating numerical data. Data presentation (e.g. on linear or
+logarithmic scales, as dots or lines, with markers/labels) as well as
+user interaction (e.g. measuring distances) is easy."
+HOMEPAGE="http://sourceforge.net/projects/gtkdatabox/"
+SRC_URI="mirror://sourceforge/gtkdatabox/gtkdatabox-${VERSION}.tar.gz"
+SRC_DIR="gtkdatabox-${VERSION}"
+PATCH_URI="
+	0.9.1.1-no-undefined.patch
+	0.9.2.0-cflags.patch
+"
+
+CYGCONF_ARGS="--includedir=${CROSS_INCLUDEDIR}/gtkdatabox --disable-glade"

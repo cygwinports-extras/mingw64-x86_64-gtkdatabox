@@ -1,0 +1,30 @@
+--- origsrc/gtkdatabox-0.9.1.1/glade/Makefile.am	2009-04-17 16:15:02.000000000 -0500
++++ src/gtkdatabox-0.9.1.1/glade/Makefile.am	2009-09-24 21:18:50.246381700 -0500
+@@ -19,7 +19,7 @@ libdatabox_la_LIBADD = \
+ 	@LIBGLADE_LIBS@
+ 
+ libdatabox_la_LDFLAGS = \
+-	-export-dynamic -module -avoid-version 
++	-export-dynamic -module -avoid-version -no-undefined
+ 
+ libdatabox_la_SOURCES = \
+ 	glade-databox.c
+@@ -46,7 +46,7 @@ libgladedatabox_la_LIBADD = \
+ 	@GLADE3_LIBS@
+ 
+ libgladedatabox_la_LDFLAGS = \
+-	-export-dynamic -module -avoid-version 
++	-export-dynamic -module -avoid-version -no-undefined
+ 
+ libgladedatabox_la_SOURCES = \
+ 	gladeui-databox.c
+--- origsrc/gtkdatabox-0.9.1.1/gtk/Makefile.am	2009-04-17 16:15:02.000000000 -0500
++++ src/gtkdatabox-0.9.1.1/gtk/Makefile.am	2009-09-24 21:19:05.695367800 -0500
+@@ -17,6 +17,7 @@ libgtkdatabox_la_SOURCES= \
+ 
+ libgtkdatabox_la_LDFLAGS= \
+ 		        -version-info $(LT_CURRENT)\
++			-no-undefined \
+ 			-release $(LT_RELEASE)\
+ 			@GTK_LIBS@
+ 
